@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nasir Hossain | Personal Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.co/library/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #4361ee;
+            --secondary: #3f37c9;
+            --accent: #4cc9f0;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray: #6c757d;
+            --success: #4ade80;
+            --card-bg: rgba(255, 255, 255, 0.85);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 28px;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--secondary);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 180px 0 100px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero h1 span {
+            color: var(--primary);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            color: var(--gray);
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 12px 32px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid var(--primary);
+        }
+
+        .btn:hover {
+            background: transparent;
+            color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(67, 97, 238, 0.2);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--primary);
+            margin-left: 15px;
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Skills Section */
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .skill-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .skill-icon {
+            position: relative;
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 25px;
+            background: var(--primary);
+            border-radius: 50%;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 50px;
+            color: white;
+        }
+        
+        .skill-icon img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .skill-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--secondary);
+        }
+
+        /* About Section */
+        .about {
+            background: white;
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .about-image {
+            flex: 1;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            color: var(--gray);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 40px;
+        }
+
+        .footer-col {
+            flex: 1;
+        }
+
+        .footer-col h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--accent);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .btn {
+                display: block;
+                margin: 10px auto;
+                width: 200px;
+            }
+            
+            .btn-outline {
+                margin-left: 0;
+            }
+        }
+
+        /* Animation */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">Nasir<span>Hossain</span></a>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Hi, I'm <span>Nasir Hossain</span><br>Front-End Developer & Enthusiast</h1>
+            <p>I build responsive websites with modern technologies while balancing my passion for fitness, cricket, and community service.</p>
+            <a href="#skills" class="btn">Explore My Skills</a>
+            <a href="#contact" class="btn btn-outline">Contact Me</a>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section" id="skills">
+        <div class="container">
+            <div class="section-title">
+                <h2>My Skills & Passions</h2>
+                <p>Here's what I dedicate my time to, both professionally and personally</p>
+            </div>
+            <div class="skills-container">
+                <!-- Skill 1 -->
+                <div class="skill-card">
+                    <div class="skill-icon">
+                      <img src="codingimg.jpg" alt="">
+                    </div>
+                    <h3>Front-End Developer</h3>
+                    <p>I create responsive, user-friendly websites using HTML, CSS, JavaScript, and modern frameworks like React.</p>
+                </div>
+                
+                <!-- Skill 2 -->
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <img src="gymimg.jpg" alt="">
+                    </div>
+                    <h3>Fitness Enthusiast</h3>
+                    <p>Dedicated to physical wellness with daily workouts, strength training, and maintaining a healthy lifestyle.</p>
+                </div>
+                
+                <!-- Skill 3 -->
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <img src="Cricketimg.jpg" alt="">
+                    </div>
+                    <h3>Cricketer</h3>
+                    <p>Passionate about cricket - both playing and following the sport. Team player with strategic thinking.</p>
+                </div>
+                
+                <!-- Skill 4 -->
+                <div class="skill-card">
+                    <div class="skill-icon">
+                         <img src="redimg.jpg" alt="">
+                    </div>
+                    <h3>Volunteer</h3>
+                    <p>Active with Red Crescent & Green World, contributing to community welfare and environmental initiatives.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-image floating">
+                    <img src="mainimg.jpg" alt="Nasir Hossain">
+                </div>
+                <div class="about-text">
+                    <h2>About Me</h2>
+                    <p>Hello! I'm Nasir, a front-end developer with a passion for creating beautiful and functional web experiences. When I'm not coding, you'll find me at the gym pushing my limits, playing cricket with friends, or volunteering for community service.</p>
+                    <p>I believe in balancing professional growth with personal passions. My experience in team sports like cricket has taught me collaboration and strategy, which I apply to my development work. My volunteer work with Red Crescent and Green World keeps me grounded and connected to important causes.</p>
+                    <p>I'm always looking to take on new challenges and collaborate on meaningful projects. Let's connect!</p>
+                    <a href="#contact" class="btn">Get In Touch</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Get In Touch</h2>
+                <p>Have a project in mind or want to chat about cricket? Send me a message!</p>
+            </div>
+            <div style="text-align: center; padding: 30px;">
+                <a href="mailto:nasircopyexpert@gmail.com" class="btn">Send Email</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>Nasir Hossain</h3>
+                    <p>Front-end developer passionate about creating meaningful digital experiences while living a balanced life.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul style="list-style: none; margin-top: 20px;">
+                        <li style="margin-bottom: 10px;"><a href="#home" style="color: rgba(255,255,255,0.8); text-decoration: none;">Home</a></li>
+                        <li style="margin-bottom: 10px;"><a href="#skills" style="color: rgba(255,255,255,0.8); text-decoration: none;">Skills</a></li>
+                        <li style="margin-bottom: 10px;"><a href="#about" style="color: rgba(255,255,255,0.8); text-decoration: none;">About</a></li>
+                        <li style="margin-bottom: 10px;"><a href="#contact" style="color: rgba(255,255,255,0.8); text-decoration: none;">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <p style="margin-top: 20px; color: rgba(255,255,255,0.8);">
+                        <i class="fas fa-envelope" style="margin-right: 10px;"></i> nasircopyexpert@gmail.com<br>
+                        <i class="fas fa-map-marker-alt" style="margin-right: 10px; margin-top: 10px; display: inline-block;"></i> Dhaka, Bangladesh
+                    </p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Nasir Hossain. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.backgroundColor = 'rgba(255, 255, 255, 0.98)';
+                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+                header.style.boxShadow = '0 2px 15px rgba(0, 0, 0, 0.1)';
+            }
+        });
+    </script>
+</body>
+</html>
